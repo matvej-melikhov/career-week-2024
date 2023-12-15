@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Студенческая карьерная неделя СОКТ">
+    <meta property="og:site_name" content="Студенческая карьерная неделя СОКТ">
+    <meta property="og:url" content="https://sokt-profcom.ru">
+    <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
+    <meta property="og:image" content="{{ url_for('index') }}static/img/sokt-preview.png">
+
+    <link rel="icon" href="{{ url_for('index') }}static/img/sokt.png">
+    <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
+    <script src="https://kit.fontawesome.com/0ad5947fc3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ url_for('index') }}static/js/owl.carousel.min.js"></script>
+</head>
+
+<body>
+
+    {% for flash in get_flashed_messages() %}
+    <div class="flash">{{ flash }}</div>
+    {% endfor %}
+    
+    {% block content %}{% endblock %}
+
+</body>
+</html>

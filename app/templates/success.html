@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Приглашение выслано на почту{% endblock %}
+
+{% block content %}
+
+<div class="success">
+    <div class="success__inner">
+        <img src="{{ url_for('index') }}static/img/sokt.png" alt="" class="success__logo">
+        <h2 class="success__text">{{ name }}, письмо с приглашением выслано Вам на почту! Если не обнаружили письмо, проверьте папку «СПАМ»</h2>
+        <a href="{{ url_for('index') }}" class="success__btn">На главную</a>
+    </div>
+</div>
+
+{% endblock %}

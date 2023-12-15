@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Карьерная неделя СОКТ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <style>
+        * {
+            font-family: Montserrat, sans-serif;
+        }
+
+        .mail {
+            padding: 10px;
+            font-family: Montserrat;
+        }
+
+        .mail__title {
+            font-size: 30px;
+            color: #5600C4;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .mail__title span {
+            color: #CE00E0;
+        }
+
+        .mail__text {
+            font-size: 16px;
+            color: #3C0088;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .mail__text span {
+            color: #CE00E0;
+            font-weight: 500;
+        }
+
+        .mail__label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .mail__finish {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #5600C4;
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="mail">
+
+        <div style="display: flex; gap: 20px;" class="mail__header">
+           <div class="mail__logo mail__logo_1"></div>
+           <div class="mail__logo mail__logo_2"></div>
+           <div class="mail__logo mail__logo_3"></div>
+        </div>
+
+        <div class="mail__inner">
+
+            <h1 class="mail__title">Студенческая <span>карьерная</span> неделя</h1>
+            <p class="mail__text">
+                {{ name }}, ты зарегистрирован на карьерную неделю СОКТ!
+                Ждем тебя со 2 по 6 октября в 5 корпусе ЛЭТИ!
+                <span>Приходи с QR-кодом!</span>
+            </p>
+
+            <img width="250px" height="250px" src="{{ url }}">
+
+            <p class="mail__finish">
+                С заботой о студентах, студенческий офис карьеры и трудоустройства профкома студентов и аспирантов СПбГЭТУ «ЛЭТИ».
+            </p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

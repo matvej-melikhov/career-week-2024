@@ -140,10 +140,9 @@ body {
 }
 
 .main {
-    height: calc(100vh - 5rem);
     display: flex;
     align-items: center;
-    padding-top: 5rem;
+    padding: 17rem 0 10rem 0;
 
     &__tags {
         display: flex;
@@ -927,7 +926,6 @@ body {
 
     .main {
         padding-top: 15rem;
-        height: calc(100vh - 7rem);
     }
 
     .why {
@@ -950,7 +948,7 @@ body {
         left: 30px;
         width: calc(100% - 60px);
         flex-direction: column;
-        padding: 3rem 0 !important;
+        padding: 3rem 0 1rem 0 !important;
 
         &__left {
             margin-bottom: 2.5rem;
@@ -1009,8 +1007,8 @@ body {
     }
 
     .main {
-        padding-top: 11rem;
-        height: calc(100vh - 7rem);
+        padding-top: 23rem;
+        padding-bottom: 8rem;
         
         &__inner {
             flex-direction: column;

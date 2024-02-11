@@ -206,6 +206,12 @@ body {
             font-weight: 500;
         }
     }
+    
+    &__btns {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
 
     &__btn {
         display: block;
@@ -219,6 +225,17 @@ body {
         border: 2px solid transparent;
         transition: all .2s ease;
         border-radius: 100px;
+        
+        &_tg {
+            background: #e4e8f8;
+            color: #5f5fa3;
+            
+            &:hover {
+                border: 2px solid #5f5fa3 !important;
+                background: transparent !important;
+                color: #5f5fa3 !important;
+            }
+        }
 
         &:hover {
             background: transparent;
@@ -1046,10 +1063,22 @@ body {
             margin: 0 !important;
         }
         
+        &__btns {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
         &__btn {
             margin: 0 auto;
-            padding: 3rem 13rem;
+            padding: 0;
+            width: 90%;
             margin-top: 3rem;
+            padding: 4rem 0;
+            
+            &_tg {
+                margin-top: 0;
+                padding: 2rem 0;
+            }
         }
     }
     

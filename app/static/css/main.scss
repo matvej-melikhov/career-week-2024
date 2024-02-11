@@ -1,9 +1,9 @@
 @import "fonts.scss";
 
-$violet: #5600C4;
-$violet-gr: linear-gradient(288deg, #5600C4, #3c00c4);
-$dark-violet: #3C0088;
-$pink: #CE00E0;
+$red: #cc232b;
+$red-gr: linear-gradient(288deg, #b72931, #b2272e);
+$violet: #821995;
+$orange: #ff714b;
 
 $indent: 150px;
 
@@ -25,7 +25,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 * {
+    font-family: "Cakra";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400 !important;
+}
+
+p {
     font-family: "Styrene";
+}
+
+span {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+a, button {
+    border-radius: 100px !important;
 }
 
 h1,
@@ -66,13 +84,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-itrems: center;
-    padding: 5rem 0px;
+    padding: 3rem 0px;
     position: absolute;
+    z-index: 9999;
+    background: white;
     top: 0px;
     left: $indent;
 
 
-    &__left {}
+    &__left {
+        display: flex;
+        align-items: center;
+    }
 
     &__logos {
         display: flex;
@@ -95,21 +118,21 @@ body {
     &__right {}
 
     &__menu {
-        list-style: none;
+//        list-style: none;
         display: flex;
         gap: 3rem;
-        font-size: 1.6rem;
-        color: $dark-violet;
+        font-size: 1.8rem;
+        color: $violet;
 
         li {
             text-align: right;
 
             a {
-                color: $dark-violet;
+                color: $violet;
                 transition: all .2s ease;
 
                 &:hover {
-                    color: $pink;
+                    color: $orange;
                 }
             }
         }
@@ -124,46 +147,61 @@ body {
 
     &__tags {
         display: flex;
-        gap: 1.5rem;
+//        gap: 1.5rem;
         align-items: center;
+    }
+    
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    &__image {
+        width: 30%;
+    }
+    
+    &__content {
+        width: 65%;
     }
 
     &__tag {
-        padding: 1.5rem 2rem;
+        padding: 1rem 2rem;
         font-size: 1.8rem;
         font-weight: 500;
+        font-family: "Styrene";
 
         &_first {
-            border: 1px solid $pink;
-            color: $pink;
+            border: 1px solid $orange;
+            border-radius: 50px 0px 0px 50px;
+            color: $orange;
         }
 
         &_second {
-            border: 1px solid $violet;
-            color: $violet;
+            border: 1px solid $red;
+            border-radius: 0px 50px 50px 0px;
+            margin-left: -1px;
+            color: $red;
         }
     }
 
     &__title {
-        font-size: 5.5rem;
-        color: $violet;
-        font-weight: 700;
+        font-size: 7rem;
+        color: $red;
         margin: 2rem 0px 3rem 0px;
-        //        font-style: italic;
-        text-transform: uppercase;
 
         span {
-            color: $pink
+            color: $violet;
         }
     }
 
     &__text {
         font-size: 2rem;
         font-weight: 400;
-        color: $dark-violet;
+        color: $violet;
         padding: 0.5rem 0;
         padding-left: 3rem;
-        border-left: 2px solid $dark-violet;
+        border-left: 2px solid $violet;
 
         span {
             font-weight: 500;
@@ -174,24 +212,25 @@ body {
         display: block;
         padding: 3rem 6rem;
         font-size: 1.8rem;
-        background: $violet;
+        background: $red-gr;
         font-size: 500;
-        //        font-style: italic;
         color: white;
         margin-top: 5rem;
         width: max-content;
-        border: 2px solid $violet;
+        border: 2px solid transparent;
         transition: all .2s ease;
+        border-radius: 100px;
 
         &:hover {
             background: transparent;
-            color: $violet;
+            color: $red;
+            border: 2px solid $red;
         }
     }
 }
 
 .why {
-    background: linear-gradient(288deg, rgba(89, 0, 178, 0.90) 0%, rgba(72, 0, 224, 0.90) 100%);
+    background: $red-gr;
     padding: 7rem 0px;
 
     &__title {
@@ -214,10 +253,11 @@ body {
         margin-bottom: 4rem;
         background: white;
         padding: 5rem;
+        border-radius: 40px;
 
         i {
             font-size: 5rem;
-            color: $violet;
+            color: $red;
         }
     }
 
@@ -248,7 +288,7 @@ body {
 
         &:hover {
             background: #eaeaea;
-            color: $violet;
+            color: $red;
         }
     }
 }
@@ -295,7 +335,7 @@ body {
 }
 
 .reg {
-    background: linear-gradient(288deg, rgba(89, 0, 178, 0.90) 0%, rgba(72, 0, 224, 0.90) 100%);
+    background: $red-gr;
     padding: 7rem 0px;
 
     &__title {
@@ -323,15 +363,20 @@ body {
         &:nth-child(odd) {
             background: rgba(255, 255, 255, 0.05);
         }
-
+        
+        &:nth-child(1) {
+            border-radius: 40px 40px 0px 0px;
+        }
+        
         &:nth-child(6) {
+            border-radius: 0px 0px 40px 40px;
             border-bottom: 1px solid white;
         }
     }
 
     option {
         background: white;
-        color: $violet;
+        color: $red;
         font-weight: 700;
 
         &[disabled] {
@@ -363,7 +408,7 @@ body {
     }
 
     &__btn {
-        color: $violet;
+        color: $red;
         font-weight: 400;
         font-size: 1.5rem;
         width: 100%;
@@ -434,12 +479,12 @@ body {
         color: $violet;
 
         span {
-            color: $pink;
+            color: $orange;
         }
     }
 
     &__text {
-        color: $dark-violet;
+        color: $violet;
         font-size: 1.6rem;
         margin-bottom: 3rem;
     }
@@ -458,7 +503,7 @@ body {
         transition: all .2s ease;
 
         &:hover {
-            background: $pink;
+            background: $orange;
         }
     }
 }
@@ -483,22 +528,22 @@ body {
 
     &__title {
         font-size: 30px;
-        color: $violet;
+        color: $red;
         font-weight: 700;
         margin-bottom: 20px;
 
         span {
-            color: $pink;
+            color: $orange;
         }
     }
 
     &__text {
         font-size: 16px;
-        color: $dark-violet;
+        color: $violet;
         margin-bottom: 30px;
 
         span {
-            color: $pink;
+            color: $orange;
         }
     }
 
@@ -517,7 +562,7 @@ body {
     &__finish {
         margin-top: 50px;
         font-size: 16px;
-        color: $violet;
+        color: $red;
     }
 }
 
@@ -527,7 +572,7 @@ body {
     padding: 40px 25px;
     background: linear-gradient(45deg, rgba(245, 230, 255, 0.7), rgba(243, 224, 255, 0.7));
     backdrop-filter: blur(8px);
-    color: $violet;
+    color: $red;
     font-weight: 500;
     top: 30px;
     left: 20px;
@@ -537,7 +582,7 @@ body {
     z-index: 10000;
 
     i {
-        color: $violet;
+        color: $red;
         margin-left: 7px;
     }
 }
@@ -584,7 +629,7 @@ body {
         margin: 0;
         font-size: 3rem;
         font-weight: 500;
-        color: $violet;
+        color: $red;
         margin-bottom: 6rem;
     }
 
@@ -592,9 +637,10 @@ body {
         width: 100%;
         max-width: 300px;
         font-size: 18px;
-        background: $violet;
+        background: $red;
         color: white;
         padding: 2rem 3rem;
+        font-family: "Styrene";
     }
 }
 
@@ -622,7 +668,7 @@ body {
         margin: 0;
         font-size: 3rem;
         font-weight: 500;
-        color: $violet;
+        color: $red;
         margin-bottom: 6rem;
     }
 
@@ -630,7 +676,7 @@ body {
         width: 100%;
         max-width: 300px;
         font-size: 18px;
-        background: $violet;
+        background: $red;
         color: white;
         padding: 2rem 3rem;
     }
@@ -649,7 +695,7 @@ body {
         margin: 0 auto;
         padding: 20px 40px;
         border-radius: 10px;
-        background: $violet;
+        background: $red;
         color: white;
         border: none;
         outline: none;
@@ -676,7 +722,7 @@ body {
     img {
         margin-top: 40%;
         margin-bottom: 15px;
-        color: $violet;
+        color: $red;
         width: 100px;
     }
 }
@@ -692,7 +738,7 @@ body {
     color: #121212 !important;
     margin-top: 10px;
     width: 80%;
-    border: 1px solid $violet;
+    border: 1px solid $red;
     padding: 15px 10px;
     margin: 0 auto !important;
     margin-top: 10px !important;
@@ -721,7 +767,7 @@ body {
     &__image {
         text-align: center;
         margin-bottom: 5rem;
-        color: $violet;
+        color: $red;
 
         i {
             font-size: 20rem;
@@ -730,23 +776,23 @@ body {
 
     &__title {
         font-size: 3rem;
-        color: $violet;
+        color: $red;
         margin-bottom: 4rem;
         text-align: center;
 
         span {
-            color: $pink;
+            color: $orange;
         }
     }
 
     &__text {
         font-size: 2rem;
-        color: $violet;
+        color: $red;
         text-align: center;
         font-weight: 500;
 
         span {
-            color: $pink;
+            color: $orange;
         }
     }
 
@@ -756,9 +802,9 @@ body {
 
     &__item {
         padding: 2rem 2rem;
-        border: 1px solid $violet;
+        border: 1px solid $red;
         border-bottom: none;
-        color: #5000bc;
+        color: #ff714b;
         font-size: 1.8rem;
         width: 100%;
         box-sizing: border-box;
@@ -766,22 +812,22 @@ body {
 
         span {
             font-weight: 700;
-            color: $violet;
+            color: $red;
         }
 
         &:nth-child(odd) {
-            background: #f8f4ff;
+            background: #fffaf4;
         }
 
         &:last-child {
-            border-bottom: 1px solid $violet;
+            border-bottom: 1px solid $red;
         }
     }
 
     &__btn {
         width: 100%;
         padding: 3rem 2rem;
-        background: $violet;
+        background: $red;
         color: white;
         border: none;
         outline: none;
@@ -811,7 +857,7 @@ body {
     
     span {
         font-size: 1.8rem;
-        color: $violet;
+        color: $red;
         
     }
 
@@ -819,7 +865,7 @@ body {
         color: white;
         font-size: 2.5rem;
         margin: 0;
-        background: $violet;
+        background: $red;
         width: 7rem;
         height: 7rem;
         text-align: center;
@@ -862,6 +908,7 @@ body {
         left: 50px;
         width: calc(100% - 100px);
         flex-direction: column;
+        padding: 4rem 0 2rem 0 !important;
 
         &__left {
             margin-bottom: 1rem;
@@ -869,7 +916,7 @@ body {
 
         &__menu {
             padding-left: 0;
-            border-top: 1px solid $dark-violet;
+            border-top: 1px solid $violet;
             padding: 2rem 1rem;
 
             li {
@@ -879,8 +926,8 @@ body {
     }
 
     .main {
-        padding-top: 7rem;
-        height: calc(100vh - 7rem)
+        padding-top: 15rem;
+        height: calc(100vh - 7rem);
     }
 
     .why {
@@ -903,17 +950,19 @@ body {
         left: 30px;
         width: calc(100% - 60px);
         flex-direction: column;
-        padding: 5rem 0;
+        padding: 3rem 0 !important;
 
         &__left {
             margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
         }
 
         &__logos {
             gap: 3rem;
 
             img {
-                height: 50px;
+                height: 40px;
             }
         }
 
@@ -935,18 +984,19 @@ body {
             }
 
             &::-webkit-scrollbar-track {
-                background: #f5eeff;
+                background: #fbeeff;
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: rgba(79, 0, 180, 0.7);
+                background-color: rgba(92, 0, 119, 0.6);
                 border: 1px solid #f5eeff;
             }
         }
 
         &__menu {
-            padding-left: 0;
-            border-top: 1px solid $dark-violet;
+//            padding-left: 0;
+            padding-left: 15px !important;
+            border-top: 1px solid $violet;
             padding: 2rem 1rem;
             font-size: 2rem;
             width: max-content;
@@ -959,18 +1009,52 @@ body {
     }
 
     .main {
-        padding-top: 7rem;
-        height: calc(100vh - 7rem)
-    }
-}
-
-@media (max-width: 768px) {
-    .main {
+        padding-top: 11rem;
+        height: calc(100vh - 7rem);
+        
+        &__inner {
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        &__image {
+            width: 90%;
+//            display: none;
+        }
+        
+        &__content {
+            width: 100%;
+            margin-top: -8rem;
+            background: rgba(255, 255, 255, 0.86);
+            text-align: center;
+        }
+        
+        &__tags {
+            margin: 0 auto;
+            width: max-content;
+        }
+        
+        &__tag {
+            padding: 1.5rem 2rem;
+        }
+        
         &__title {
             font-size: 4.8rem;
+            margin-bottom: 1rem; 
+        }
+        
+        &__text {
+            border: none;
+            margin: 0 !important;
+        }
+        
+        &__btn {
+            margin: 0 auto;
+            padding: 3rem 13rem;
+            margin-top: 3rem;
         }
     }
-
+    
     .reg {
         &__input {
             padding: 20px;

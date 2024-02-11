@@ -1,0 +1,9 @@
+env/
+.idea/
+*.md
+*.bat
+*.config
+*.log
+app/__pycache__/
+__pycache__/
+instance/

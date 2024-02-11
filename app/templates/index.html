@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <title>Карьерная неделя СОКТ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta property="og:title" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:site_name" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:url" content="https://sokt-profcom.ru">
-    <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
-    <meta property="og:image" content="{{ url_for('index') }}static/img/sokt-preview.png">
 
-    <link rel="icon" href="{{ url_for('index') }}static/img/sokt.png">
+    <meta property="og:title" content="Студенческая карьерная неделя СОКТ">
+    <meta property="og:site_name" content="Промышленная карьерная неделя СОКТ">
+    <meta property="og:url" content="https://industrial-career-week.ru">
+    <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
+    <meta property="og:image" content="{{ url_for('index') }}static/img/career.png">
+
+    <link rel="icon" href="{{ url_for('index') }}static/img/career.png">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
@@ -51,13 +51,16 @@
 
         <div class="main">
             <div class="main__inner">
-                <div class="main__tags">
-                    <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 2-6 октября</div>
-                    <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> 5 корпус ЛЭТИ</div>
+                <img class="main__image" src="{{url_for('index')}}static/img/career.png" alt="">
+                <div class="main__content">
+                    <div class="main__tags">
+                        <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 19-23 февраля</div>
+                        <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> 5 корпус ЛЭТИ</div>
+                    </div>
+                    <h1 class="main__title">Промышленная <span>карьерная неделя</span></h1>
+                    <p class="main__text">Для студентов карьерная неделя — отличный <span>шанс познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и возможность получить <span>стажировку.</span></p>
+                    <a href="#registration" class="main__btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
                 </div>
-                <h1 class="main__title">Студенческая <span>карьерная</span> неделя</h1>
-                <p class="main__text">Для студентов карьерная неделя — отличный <span>шанс познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и возможность получить <span>стажировку.</span></p>
-                <a href="#registration" class="main__btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
             </div>
         </div>
 
@@ -150,7 +153,7 @@
                 <input required name="grade" type="text" class="reg__input" placeholder="Направление подготовки">
                 <input required name="email" type="text" class="reg__input" placeholder="Почтовый ящик">
 
-                <textarea class="reg__input" name="from" id="" rows="5" placeholder="Откуда узнали про Карьерную неделю СОКТ?"></textarea>
+                <textarea class="reg__input" name="from" id="" rows="5" placeholder="Откуда узнали про промышленную карьерную неделю?"></textarea>
 
                 <div class="reg__check">
                     <input required type="checkbox">

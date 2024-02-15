@@ -10,10 +10,10 @@
     <meta property="og:site_name" content="Студенческая карьерная неделя СОКТ">
     <meta property="og:url" content="https://sokt-profcom.ru">
     <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
-    <meta property="og:image" content="{{ url_for('index') }}static/img/sokt-preview.png">
+    <meta property="og:image" content="{{ url_for('static', filename='img/sokt-preview.png') }}">
     
-    <link rel="icon" href="{{ url_for('index') }}static/img/sokt.png">
-    <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/sokt.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <script src="https://kit.fontawesome.com/0ad5947fc3.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,10 +21,11 @@
 
     <div class="error">
         <div class="error__inner">
-            <img src="{{ url_for('index') }}static/img/sokt.png" alt="" class="error__logo">
+            <img src="{{ url_for('static', filename='img/sokt.png') }}" alt="" class="error__logo">
             <h2 class="error__text">Такой страницы нет :(</h2>
             <a href="{{ url_for('index') }}" class="error__btn">На главную</a>
         </div>
     </div>
 
 </body>
+</html>

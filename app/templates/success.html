@@ -1,13 +1,34 @@
 {% extends "base.html" %}
 
-{% block title %}Приглашение выслано на почту{% endblock %}
+{% block title %}{% if mail_failed %}Регистрация успешна{% else %}Приглашение выслано на почту{% endif %}{% endblock %}
 
 {% block content %}
 
 <div class="success">
     <div class="success__inner">
-        <img src="{{ url_for('index') }}static/img/sokt.png" alt="" class="success__logo">
+        <img src="{{ url_for('static', filename='img/career.png') }}" alt="" class="success__logo">
+        
+        {% if mail_failed %}
+        <h2 class="success__text" style="color: #d9534f; margin-bottom: 3rem;">{{ name }}, вы успешно зарегистрированы!</h2>
+        <div style="background: rgba(217, 83, 79, 0.05); border-left: 4px solid #d9534f; padding: 15px 20px; border-radius: 4px; margin-bottom: 30px; text-align: left;">
+            <p style="margin: 0; font-size: 15px; color: #d9534f; font-weight: 500;">
+                ⚠️ Не удалось отправить билет на почту. Пожалуйста, обязательно сохраните (сделайте скриншот) QR-код ниже для входа на мероприятие.
+            </p>
+        </div>
+        {% else %}
         <h2 class="success__text">{{ name }}, письмо с приглашением выслано Вам на почту! Если не обнаружили письмо, проверьте папку «СПАМ»</h2>
+        {% endif %}
+        
+        {% if user_id %}
+        <div class="success__qr" style="margin-top: 20px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: #333; font-weight: 500;">Ваш билет для входа:</h3>
+            <img src="{{ url_for('qr_code', user_id=user_id) }}" alt="QR Code" style="width: 220px; height: 220px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom: 12px;">
+            <p style="font-size: 14px; color: #666; max-width: 340px; margin-bottom: 20px; line-height: 1.5; text-align: center;">
+                Сделайте скриншот этого QR-кода. Если письмо не придет, вы сможете показать этот скриншот на входе!
+            </p>
+        </div>
+        {% endif %}
+        
         <a href="{{ url_for('index') }}" class="success__btn">На главную</a>
     </div>
 </div>

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <title>Карьерная неделя СОКТ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta property="og:title" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:site_name" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:url" content="https://sokt-profcom.ru">
-    <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
-    <meta property="og:image" content="{{ url_for('index') }}static/img/sokt-preview.png">
 
-    <link rel="icon" href="{{ url_for('index') }}static/img/sokt.png">
+    <meta property="og:title" content="Промышленная карьерная неделя СОКТ">
+    <meta property="og:site_name" content="Промышленная карьерная неделя СОКТ">
+    <meta property="og:url" content="https://industrial-career-week.ru">
+    <meta property="og:description" content="Для студентов промышленная карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
+    <meta property="og:image" content="{{ url_for('index') }}static/img/career.png">
+
+    <link rel="icon" href="{{ url_for('index') }}static/img/career.png">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
@@ -33,10 +33,9 @@
         <header class="header">
             <div class="header__left">
                 <div class="header__logos">
-                    <img class="header__etu" src="{{ url_for('index') }}static/img/etu.png" alt="">
-                    <img class="header__etu_mini" src="{{ url_for('index') }}static/img/etu-mini.png" alt="">
-                    <img src="{{ url_for('index') }}static/img/sokt.png" alt="">
-                    <img src="{{ url_for('index') }}static/img/profcom.png" alt="">
+                    <img class="header__etu" src="{{ url_for('static', filename='img/etu.png') }}" alt="">
+                    <img class="header__etu_mini" src="{{ url_for('static', filename='img/etu-mini.png') }}" alt="">
+                    <img class="header__sokt" src="{{ url_for('static', filename='img/sokt.png') }}" alt="">
                 </div>
             </div>
             <div class="header__right">
@@ -48,19 +47,46 @@
             </div>
         </header>
 
+    </div>
 
-        <div class="main">
+    <div class="main">
+        <div class="main__grid"></div>
+        <div class="main__gradient-line"></div>
+        <div class="container">
             <div class="main__inner">
-                <div class="main__tags">
-                    <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 2-6 октября</div>
-                    <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> 5 корпус ЛЭТИ</div>
+                <img class="main__image" src="{{ url_for('static', filename='img/career.png') }}" alt="">
+                <div class="main__content">
+                    <div class="main__tags">
+                        <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 19-22 февраля</div>
+                        <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> 5 корпус ЛЭТИ</div>
+                    </div>
+                    <h1 class="main__title">Промышленная <span>карьерная неделя</span></h1>
+                    <p class="main__text">Для студентов карьерная неделя — отличный <span>шанс познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и возможность получить <span>стажировку.</span></p>
+                    <div class="main__actions">
+                        <div class="main__btns">
+                            <a href="#registration" class="main__btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
+                            <a href="https://t.me/industrial_career_week" class="main__btn main__btn_tg"><i class="fa-brands fa-telegram"></i>ТГ-канал</a>
+                        </div>
+                        <div class="main__stats">
+                            <div class="main__stat">
+                                <div class="main__stat-number">25+</div>
+                                <div class="main__stat-label">компаний</div>
+                            </div>
+                            <div class="main__stat-divider"></div>
+                            <div class="main__stat">
+                                <div class="main__stat-number">500+</div>
+                                <div class="main__stat-label">участников</div>
+                            </div>
+                            <div class="main__stat-divider"></div>
+                            <div class="main__stat">
+                                <div class="main__stat-number">4</div>
+                                <div class="main__stat-label">дня</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="main__title">Студенческая <span>карьерная</span> неделя</h1>
-                <p class="main__text">Для студентов карьерная неделя — отличный <span>шанс познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и возможность получить <span>стажировку.</span></p>
-                <a href="#registration" class="main__btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
             </div>
         </div>
-
     </div>
 
 
@@ -113,24 +139,21 @@
 
             <div class="slider owl-carousel owl-theme" id="slider">
 
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/1.png')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/2.png')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/1.jpg')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/2.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/3.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/4.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/5.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/6.png')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/7.png')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/6.jpg')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/7.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/8.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/9.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/10.png')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/11.png')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/12.png')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/10.jpg')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/11.jpg')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/12.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/13.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/14.png')"></div>
+                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/14.jpg')"></div>
                 <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/15.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/16.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/17.png')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/18.png')"></div>
 
             </div>
 
@@ -145,12 +168,36 @@
             <form action="" method="POST" class="reg__form">
 
                 <input required name="name" type="text" class="reg__input" placeholder="Имя фамилия">
-                <input required name="course" type="text" class="reg__input" placeholder="Курс">
-                <input required name="faculty" type="text" class="reg__input" placeholder="Факультет">
-                <input required name="grade" type="text" class="reg__input" placeholder="Направление подготовки">
+                
+                <select required name="course" class="reg__input">
+                    <option value="" disabled selected hidden>Выберите курс</option>
+                    <option value="1">1 курс</option>
+                    <option value="2">2 курс</option>
+                    <option value="3">3 курс</option>
+                    <option value="4">4 курс</option>
+                </select>
+
+                <select required name="faculty" class="reg__input">
+                    <option value="" disabled selected hidden>Выберите факультет</option>
+                    <option value="ФКТИ">ФКТИ</option>
+                    <option value="ФРТ">ФРТ</option>
+                    <option value="ФЭЛ">ФЭЛ</option>
+                    <option value="ФЭА">ФЭА</option>
+                    <option value="ФИБС">ФИБС</option>
+                    <option value="ГФ">ГФ</option>
+                    <option value="ИНФРОТЕХ">ИНФРОТЕХ</option>
+                </select>
+
+                <select required name="grade" class="reg__input">
+                    <option value="" disabled selected hidden>Выберите направление подготовки</option>
+                    <option value="Бакалавриат">Бакалавриат</option>
+                    <option value="Магистратура">Магистратура</option>
+                    <option value="Аспирантура">Аспирантура</option>
+                </select>
+
                 <input required name="email" type="text" class="reg__input" placeholder="Почтовый ящик">
 
-                <textarea class="reg__input" name="from" id="" rows="5" placeholder="Откуда узнали про Карьерную неделю СОКТ?"></textarea>
+                <textarea class="reg__input" name="reason" id="" rows="5" placeholder="Откуда узнали про промышленную карьерную неделю?"></textarea>
 
                 <div class="reg__check">
                     <input required type="checkbox">

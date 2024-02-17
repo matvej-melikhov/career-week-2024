@@ -25,10 +25,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 * {
-    font-family: "Cakra";
+    font-family: "Styrene", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: "Cakra", sans-serif;
     font-weight: 400 !important;
 }
 
@@ -77,17 +78,19 @@ body {
 
 .container {
     padding: 0px $indent;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header {
     width: calc(100% - 300px);
     display: flex;
     justify-content: space-between;
-    align-itrems: center;
+    align-items: center;
     padding: 3rem 0px;
     position: absolute;
     z-index: 9999;
-    background: white;
+    background: transparent;
     top: 0px;
     left: $indent;
 
@@ -122,14 +125,24 @@ body {
     &__right {}
 
     &__menu {
-//        list-style: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
         display: flex;
         gap: 3rem;
         font-size: 1.8rem;
         color: $violet;
 
         li {
-            text-align: right;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child)::after {
+                content: '/';
+                margin-left: 3rem;
+                color: $violet;
+                opacity: 0.5;
+            }
 
             a {
                 color: $violet;
@@ -144,6 +157,7 @@ body {
 }
 
 .main {
+    box-sizing: border-box;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -190,22 +204,11 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: radial-gradient(circle, rgba(130, 25, 149, 0.07) 1px, transparent 1px);
-        background-size: 40px 40px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.02' transform='translate(12.5,12.5) rotate(15)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.06' transform='translate(37.5,12.5) rotate(145)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.04' transform='translate(62.5,12.5) rotate(70)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.08' transform='translate(87.5,12.5) rotate(200)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.07' transform='translate(12.5,37.5) rotate(310)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.02' transform='translate(37.5,37.5) rotate(45)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.09' transform='translate(62.5,37.5) rotate(190)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.03' transform='translate(87.5,37.5) rotate(85)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.05' transform='translate(12.5,62.5) rotate(250)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.08' transform='translate(37.5,62.5) rotate(15)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.01' transform='translate(62.5,62.5) rotate(130)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.06' transform='translate(87.5,62.5) rotate(290)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.08' transform='translate(12.5,87.5) rotate(60)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.04' transform='translate(37.5,87.5) rotate(210)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.07' transform='translate(62.5,87.5) rotate(330)'/%3E%3Cpolygon points='0,-4 3.4,2 -3.4,2' fill='%23821995' opacity='0.02' transform='translate(87.5,87.5) rotate(115)'/%3E%3C/svg%3E");
+        background-size: 100px 100px;
         pointer-events: none;
-        mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 70%);
-        -webkit-mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 70%);
-    }
-
-    &__gradient-line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, $orange, $red, $violet, transparent);
-        animation: gradientShift 4s ease-in-out infinite;
-        background-size: 200% 100%;
+        mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 60%, transparent 100%);
     }
 
     &__inner {
@@ -237,19 +240,19 @@ body {
         padding: 1rem 2rem;
         font-size: 1.8rem;
         font-weight: 500;
-        font-family: "Styrene";
+        font-family: "Styrene", sans-serif;
         backdrop-filter: blur(8px);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        transition: box-shadow 0.25s ease;
 
         &:hover {
-            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(130, 25, 149, 0.15);
         }
 
         &_first {
             border: 1px solid $orange;
             border-radius: 50px 0px 0px 50px;
             color: $orange;
-            background: rgba(255, 113, 75, 0.06);
+            background: rgba(255, 240, 235, 0.7);
 
             &:hover {
                 box-shadow: 0 4px 20px rgba(255, 113, 75, 0.2);
@@ -261,7 +264,7 @@ body {
             border-radius: 0px 50px 50px 0px;
             margin-left: -1px;
             color: $red;
-            background: rgba(204, 35, 43, 0.06);
+            background: rgba(255, 235, 235, 0.7);
 
             &:hover {
                 box-shadow: 0 4px 20px rgba(204, 35, 43, 0.2);
@@ -270,6 +273,7 @@ body {
     }
 
     &__title {
+        font-family: "Cakra", sans-serif;
         font-size: 7rem;
         color: $red;
         margin: 2rem 0px 3rem 0px;
@@ -305,7 +309,7 @@ body {
     &__actions {
         display: flex;
         align-items: center;
-        gap: 5rem;
+        gap: 3rem;
         margin-top: 5rem;
         animation: heroFadeUp 0.8s 0.45s ease-out both;
     }
@@ -318,9 +322,9 @@ body {
 
     &__btn {
         display: block;
-        padding: 3rem 6rem;
-        font-size: 1.8rem;
-        background: $red-gr;
+        padding: 3.5rem 6rem;
+        font-size: 2.2rem;
+        background: $red;
         font-weight: 500;
         color: white;
         width: max-content;
@@ -345,12 +349,10 @@ body {
             background: transparent;
             color: $red;
             border-color: $red;
-            transform: translateY(-3px);
             box-shadow: 0 8px 35px rgba(204, 35, 43, 0.35);
         }
 
         &:not(&_tg):active {
-            transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(204, 35, 43, 0.2);
         }
     }
@@ -1125,24 +1127,24 @@ body {
         left: 30px;
         width: calc(100% - 60px);
         flex-direction: column;
-        padding: 3rem 0 1rem 0 !important;
+        padding: 2rem 0 0 0 !important;
 
         &__left {
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
             display: flex;
             justify-content: center;
         }
 
         &__logos {
-            gap: 3rem;
+            gap: 2rem;
 
             img {
-                height: 40px;
+                height: 28px;
             }
         }
 
         &__sokt {
-            height: 42px !important;
+            height: 30px !important;
         }
 
         &__etu {
@@ -1152,65 +1154,65 @@ body {
 
         &__etu_mini {
             display: block;
-            height: 55px !important;
+            height: 40px !important;
         }
 
         &__right {
-            overflow-x: auto;
-
-            &::-webkit-scrollbar {
-                height: 4px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: #fbeeff;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: rgba(92, 0, 119, 0.6);
-                border: 1px solid #f5eeff;
-            }
+            width: 100%;
+            -webkit-mask-image: linear-gradient(to right, black calc(100% - 40px), transparent 100%);
+            mask-image: linear-gradient(to right, black calc(100% - 40px), transparent 100%);
         }
 
         &__menu {
-//            padding-left: 0;
-            padding-left: 15px !important;
-            border-top: 1px solid $violet;
-            padding: 2rem 1rem;
+            padding-left: 0 !important;
+            border-top: 1px solid rgba(130, 25, 149, 0.15);
+            padding: 1rem 0;
             font-size: 2rem;
-            width: max-content;
+            width: 100%;
             margin: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             li {
                 text-align: left;
+                padding: 1rem 0;
+                white-space: nowrap;
+
+                &:not(:last-child)::after {
+                    content: none;
+                }
             }
         }
     }
 
     .main {
-        padding-top: 23rem;
-        padding-bottom: 8rem;
+        padding-top: 13rem;
+        padding-bottom: 4rem;
+        min-height: 100svh;
         
         &__inner {
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
         }
         
         &__image {
-            width: 90%;
-//            display: none;
+            width: 75%;
         }
         
         &__content {
             width: 100%;
-            margin-top: -8rem;
-            background: rgba(255, 255, 255, 0.86);
             text-align: center;
         }
         
         &__tags {
-            margin: 0 auto;
+            margin: -5rem auto 0;
             width: max-content;
+            position: relative;
+            z-index: 2;
         }
         
         &__tag {
@@ -1218,38 +1220,39 @@ body {
         }
         
         &__title {
-            font-size: 4.8rem;
+            font-size: 6.4rem;
             margin-bottom: 1rem; 
         }
         
         &__text {
             border: none;
             margin: 0 !important;
+            padding: 0;
         }
 
         &__actions {
-            flex-direction: column;
+            flex-direction: column-reverse;
             align-items: center;
-            gap: 4rem;
-            margin-top: 4rem;
+            gap: 3rem;
+            margin-top: 2.5rem;
         }
         
         &__btns {
-            flex-direction: column;
-            gap: 2rem;
+            flex-direction: row;
+            gap: 1.5rem;
             width: 100%;
         }
         
         &__btn {
-            margin: 0 auto;
-            padding: 0;
-            width: 90%;
-            margin-top: 3rem;
-            padding: 4rem 0;
+            margin: 0;
+            width: 65%;
+            padding: 3rem 1rem;
+            font-size: 1.6rem;
+            text-align: center;
             
             &_tg {
                 margin-top: 0;
-                padding: 2rem 0;
+                width: 35%;
             }
         }
 

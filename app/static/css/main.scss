@@ -507,11 +507,9 @@ body {
 
     &__btn {
         display: block;
-        //        width: 100%;
-        //        max-width: 300px;
         font-weight: 400;
         padding: 2rem 2rem;
-        background: $violet;
+        background: $orange;
         border-radius: 5px;
         font-size: 1.5rem;
         color: white;
@@ -1040,7 +1038,7 @@ body {
         &__content {
             width: 100%;
             margin-top: -8rem;
-            background: rgba(255, 255, 255, 0.86);
+            background: rgba(255, 255, 255, 0.92);
             text-align: center;
         }
         

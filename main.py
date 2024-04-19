@@ -20,6 +20,7 @@ class UserView(ModelView):
     form_columns = ["id", "name", "course", "grade", "email", "reason"]
 
 admin.add_view(UserView(User, db.session))
+admin.add_view(ModelView(Company, db.session))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Успешная регистрация{% endblock %}
+
+{% block content %}
+
+<div class="success">
+    <div class="success__inner">
+        <img src="{{ url_for('index') }}static/img/career-logo.svg" alt="" class="success__logo">
+        <h2 class="text success__text">Ваша компания {{ comp_name }} успешно зарегистрирована на мероприятие! Уже скоро мы добавим ваш логотип в ленту компаний-участников</h2>
+        <a href="{{ url_for('index') }}" class="btn success__btn">На главную</a>
+    </div>
+</div>
+
+{% endblock %}

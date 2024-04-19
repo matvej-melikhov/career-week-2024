@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:site_name" content="Студенческая карьерная неделя СОКТ">
-    <meta property="og:url" content="https://sokt-profcom.ru">
+    <meta property="og:title" content="Карьерная неделя 2024 в ПРОСТО">
+    <meta property="og:site_name" content="Промышленная карьерная неделя СОКТ">
+    <meta property="og:url" content="https://industrial-career-week.ru">
     <meta property="og:description" content="Для студентов карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
-    <meta property="og:image" content="{{ url_for('index') }}static/img/sokt-preview.png">
+    <meta property="og:image" content="{{ url_for('index') }}static/img/career-logo.svg">
 
-    <link rel="icon" href="{{ url_for('index') }}static/img/sokt.png">
+    <link rel="icon" href="{{ url_for('index') }}static/img/career-logo.svg">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
@@ -26,8 +26,9 @@
     {% for flash in get_flashed_messages() %}
     <div class="flash">{{ flash }}</div>
     {% endfor %}
-    
-    {% block content %}{% endblock %}
+
+    {% block content %}{% endblock content %}
+
 
 </body>
 </html>

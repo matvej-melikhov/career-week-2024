@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+  
+  {% block title %}Регистрация участника{% endblock title %}
+   
+   {% block content %}
+    
+    <div class="reg" id="registration">
+        <div class="container">
+            <h2 class="reg__title title">Регистрация участника</h2>
+            <form action="" method="POST" class="reg__form">
+
+                <input required name="name" type="text" class="reg__input" placeholder="Имя фамилия">
+                <input name="university" type="text" class="reg__input" placeholder="ВУЗ">
+                <input required name="course" type="text" class="reg__input" placeholder="Курс">
+                <input required name="faculty" type="text" class="reg__input" placeholder="Факультет">
+                <input required name="grade" type="text" class="reg__input" placeholder="Направление подготовки">
+                <input required name="email" type="text" class="reg__input" placeholder="Почтовый ящик">
+                <input name="vk" type="text" class="reg__input" placeholder="Ссылка на страницу ВК">
+                <input name="tg" type="text" class="reg__input" placeholder="Ссылка на профиль Телеграмм">
+
+                <textarea class="reg__input reg__input_lst" name="from" id="" rows="5" placeholder="Откуда узнали про карьерную неделю 2024?"></textarea>
+
+                <div class="reg__check">
+                    <input required type="checkbox">
+                    <p class="text">Даю своё согласие на обработку и хранение моих персональных данных, а также передачу их компаниям-работодателям</p>
+                </div>
+
+                <button class="reg__btn btn" type="submit">Участвовать</button>
+
+            </form>
+        </div>
+    </div>
+
+    {% endblock content %}

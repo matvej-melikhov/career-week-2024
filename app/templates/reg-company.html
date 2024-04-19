@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация компании{% endblock title %}
+
+
+{% block content %}
+<div class="reg" id="registration">
+    <div class="container">
+        <h2 class="reg__title title">Регистрация компании</h2>
+        <form action="" method="POST" class="reg__form">
+
+            <input required name="name" type="text" class="reg__input" placeholder="ФИО">
+            <input required name="contact" type="text" class="reg__input" placeholder="Номер телефона или эл. почта">
+            <input required name="comp_name" type="text" class="reg__input" placeholder="Название компании">
+            <textarea class="reg__input reg__input_lst" name="description" id="" rows="5" placeholder="Краткое описание компании"></textarea>
+
+            <div class="reg__check">
+                <input required type="checkbox">
+                <p class="text">Нажимая кнопку «Участвовать», Вы даёте согласие на обработку ваших персональных данных</p>
+            </div>
+
+            <button class="reg__btn btn" type="submit">Участвовать</button>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

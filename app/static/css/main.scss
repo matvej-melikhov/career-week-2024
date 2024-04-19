@@ -1,9 +1,9 @@
 @import "fonts.scss";
 
-$red: #cc232b;
-$red-gr: linear-gradient(288deg, #b72931, #b2272e);
-$violet: #821995;
-$orange: #ff714b;
+$blue: #0067b2;
+$green: #26a583;
+$green-gr: linear-gradient(288deg, #30AF7D, #249d7c);
+$violet: #5c1995;
 
 $indent: 150px;
 
@@ -25,25 +25,65 @@ body::-webkit-scrollbar-thumb {
 }
 
 * {
-    font-family: "Cakra";
+    font-family: Styrene, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400 !important;
 }
 
-p {
-    font-family: "Styrene";
+.title {
+    font-family: Cakra, sans-serif;
+    font-weight: 500;
+    margin-bottom: 5rem;
+    font-size: 4rem;
+}
+
+.text {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: Styrene, sans-serif;
+}
+
+.ref {
+    color: inherit;
+    text-decoration: underline;
+    font-family: inherit;
+}
+
+.btn {
+    display: block;
+    padding: 3rem 0rem;
+    /* 3rem 6rem for main */
+    font-weight: 400;
+    font-family: Styrene, sans-serif;
+    font-size: 1.8rem;
+    font-size: 500;
+    width: 100%;
+    background: $violet;
+    transition: all .2s ease;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 100px !important;
+    margin-top: 3rem;
+}
+
+input,
+textarea {
+    font-family: Styrene, sans-serif;
+    font-size: 1.8rem !important;
 }
 
 span {
     font-family: inherit;
     color: inherit;
     font-size: inherit;
-}
-
-a, button {
-    border-radius: 100px !important;
 }
 
 h1,
@@ -101,24 +141,17 @@ body {
         display: flex;
         gap: 3rem;
         align-items: center;
-
-        img {
-            height: 40px;
-        }
     }
 
-    &__etu {
-        display: block;
-    }
-
-    &__etu_mini {
-        display: none;
+    &__logo {
+        height: 50px;
     }
 
     &__right {}
 
     &__menu {
-//        list-style: none;
+        list-style: none;
+        padding-left: 0;
         display: flex;
         gap: 3rem;
         font-size: 1.8rem;
@@ -126,13 +159,15 @@ body {
 
         li {
             text-align: right;
+            padding-left: 0;
 
             a {
                 color: $violet;
                 transition: all .2s ease;
+                font-family: Styrene, sans-serif;
 
                 &:hover {
-                    color: $orange;
+                    color: $blue;
                 }
             }
         }
@@ -146,22 +181,29 @@ body {
 
     &__tags {
         display: flex;
-//        gap: 1.5rem;
+        //        gap: 1.5rem;
         align-items: center;
     }
-    
+
     &__inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     &__image {
-        width: 30%;
+        width: 20%;
+        filter: drop-shadow(0px 0px 30px rgba(48, 175, 125, 0.25));
+        z-index: -999;
+
+
+        &_mobile {
+            display: none;
+        }
     }
-    
+
     &__content {
-        width: 65%;
+        width: 75%;
     }
 
     &__tag {
@@ -171,32 +213,32 @@ body {
         font-family: "Styrene";
 
         &_first {
-            border: 1px solid $orange;
+            border: 1px solid $blue;
             border-radius: 50px 0px 0px 50px;
-            color: $orange;
+            color: $blue;
         }
 
         &_second {
-            border: 1px solid $red;
+            border: 1px solid $violet;
             border-radius: 0px 50px 50px 0px;
             margin-left: -1px;
-            color: $red;
+            color: $violet;
         }
     }
 
     &__title {
         font-size: 7rem;
-        color: $red;
+        color: $violet;
         margin: 2rem 0px 3rem 0px;
+        font-family: Cakra, sans-serif;
 
         span {
-            color: $violet;
+            color: $green;
+            letter-spacing: 7px;
         }
     }
 
     &__text {
-        font-size: 2rem;
-        font-weight: 400;
         color: $violet;
         padding: 0.5rem 0;
         padding-left: 3rem;
@@ -206,30 +248,27 @@ body {
             font-weight: 500;
         }
     }
-    
+
     &__btns {
         display: flex;
         gap: 2rem;
         align-items: center;
+        margin-top: 4rem;
     }
 
     &__btn {
-        display: block;
+        font-size: 2rem;
         padding: 3rem 6rem;
-        font-size: 1.8rem;
-        background: $red-gr;
-        font-size: 500;
-        color: white;
-        margin-top: 5rem;
+        margin-top: 0;
         width: max-content;
         border: 2px solid transparent;
-        transition: all .2s ease;
-        border-radius: 100px;
-        
+        font-family: Cakra, sans-serif;
+
         &_tg {
             background: #e4e8f8;
             color: #5f5fa3;
-            
+            margin-top: 0 !important;
+
             &:hover {
                 border: 2px solid #5f5fa3 !important;
                 background: transparent !important;
@@ -239,21 +278,18 @@ body {
 
         &:hover {
             background: transparent;
-            color: $red;
-            border: 2px solid $red;
+            color: $blue;
+            border: 2px solid $blue;
         }
     }
 }
 
 .why {
-    background: $red-gr;
+    background: $green-gr;
     padding: 7rem 0px;
 
     &__title {
         color: white;
-        font-weight: 500;
-        margin-bottom: 5rem;
-        font-size: 4rem;
     }
 
     &__wrapper {
@@ -273,7 +309,7 @@ body {
 
         i {
             font-size: 5rem;
-            color: $red;
+            color: $blue;
         }
     }
 
@@ -282,29 +318,17 @@ body {
             font-size: 2.4rem;
             font-weight: 500;
             margin: 0;
-        }
-
-        p {
-            font-size: 2rem;
+            font-family: Cakra, sans-serif;
         }
     }
 
     &__btn {
-        color: white;
-        font-weight: 400;
-        font-size: 1.5rem;
-        width: 100%;
         border: 2px solid white;
-        text-decoration: none;
-        display: block;
-        padding: 3rem 0px;
-        text-align: center;
         background: transparent;
-        transition: all .2s ease;
 
         &:hover {
             background: #eaeaea;
-            color: $red;
+            color: $blue;
         }
     }
 }
@@ -313,9 +337,7 @@ body {
     padding: 7rem 0px;
 
     &__title {
-        font-size: 4rem;
         color: $violet;
-        margin-bottom: 3rem;
     }
 
     .slider {
@@ -330,18 +352,7 @@ body {
     }
 
     &__btn {
-        color: white;
-        font-weight: 400;
-        font-size: 1.5rem;
-        width: 100%;
-        background: $violet;
-        text-decoration: none;
-        display: block;
-        padding: 3rem 0px;
-        text-align: center;
-        margin-top: 3rem;
         border: 2px solid $violet;
-        transition: all .2s ease;
 
         &:hover {
             background: white;
@@ -350,15 +361,69 @@ body {
     }
 }
 
+.reg-links {
+    padding: 7rem 0px;
+    background: $green-gr;
+
+    &__title {
+        color: white;
+        margin-bottom: 3rem;
+    }
+
+    &__text {
+        color: white;
+        margin-bottom: 4rem;
+
+        a {
+            font-weight: 500;
+        }
+    }
+
+    &__minititle {
+        font-size: 2rem;
+        font-family: Styrene, sans-serif;
+
+    }
+
+    &__block {
+        transition: all .2s ease;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 3rem;
+        border: 2px solid white;
+        margin-bottom: 2rem;
+        background: rgba(33, 28, 0, 0.1);
+        color: white;
+
+        &:last-child {
+            background: rgba(33, 28, 0, 0.3);
+        }
+
+        &:hover {
+            background: white;
+            color: $blue;
+
+            div {
+                color: $blue;
+            }
+        }
+    }
+
+    &__arrow {
+        font-size: 2.5rem;
+        color: white;
+    }
+}
+
 .reg {
-    background: $red-gr;
+    background: $green-gr;
+    height: 100vh;
     padding: 7rem 0px;
 
     &__title {
-        font-weight: 500;
-        font-size: 4rem;
         color: white;
-        margin-bottom: 6rem;
     }
 
     &__form {}
@@ -379,20 +444,21 @@ body {
         &:nth-child(odd) {
             background: rgba(255, 255, 255, 0.05);
         }
-        
+
         &:nth-child(1) {
             border-radius: 40px 40px 0px 0px;
         }
-        
-        &:nth-child(6) {
+
+        &_lst {
             border-radius: 0px 0px 40px 40px;
             border-bottom: 1px solid white;
         }
+
     }
 
     option {
         background: white;
-        color: $red;
+        color: $blue;
         font-weight: 700;
 
         &[disabled] {
@@ -424,21 +490,12 @@ body {
     }
 
     &__btn {
-        color: $red;
-        font-weight: 400;
-        font-size: 1.5rem;
-        width: 100%;
+        color: $blue;
         background: white;
-        text-decoration: none;
-        display: block;
-        padding: 3rem 0px;
-        text-align: center;
-        margin-top: 3rem;
         outline: none;
         border: none;
         cursor: pointer;
         border: 2px solid white;
-        transition: all .2s ease;
 
         &:hover {
             background: transparent;
@@ -493,9 +550,10 @@ body {
     &__title {
         font-size: 2.5rem;
         color: $violet;
+        margin-bottom: 1rem;
 
         span {
-            color: $orange;
+            color: $blue;
         }
     }
 
@@ -506,18 +564,11 @@ body {
     }
 
     &__btn {
-        display: block;
-        font-weight: 400;
-        padding: 2rem 2rem;
-        background: $orange;
-        border-radius: 5px;
-        font-size: 1.5rem;
-        color: white;
-        text-align: center;
-        transition: all .2s ease;
+        padding: 2rem 0;
+        background: linear-gradient(45deg, $violet 45%, $blue);
 
         &:hover {
-            background: $orange;
+            background: $blue;
         }
     }
 }
@@ -542,12 +593,12 @@ body {
 
     &__title {
         font-size: 30px;
-        color: $red;
+        color: $blue;
         font-weight: 700;
         margin-bottom: 20px;
 
         span {
-            color: $orange;
+            color: $blue;
         }
     }
 
@@ -557,7 +608,7 @@ body {
         margin-bottom: 30px;
 
         span {
-            color: $orange;
+            color: $blue;
         }
     }
 
@@ -576,7 +627,7 @@ body {
     &__finish {
         margin-top: 50px;
         font-size: 16px;
-        color: $red;
+        color: $blue;
     }
 }
 
@@ -586,7 +637,7 @@ body {
     padding: 40px 25px;
     background: linear-gradient(45deg, rgba(245, 230, 255, 0.7), rgba(243, 224, 255, 0.7));
     backdrop-filter: blur(8px);
-    color: $red;
+    color: $blue;
     font-weight: 500;
     top: 30px;
     left: 20px;
@@ -596,7 +647,7 @@ body {
     z-index: 10000;
 
     i {
-        color: $red;
+        color: $blue;
         margin-left: 7px;
     }
 }
@@ -627,6 +678,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
+    text-align: center;
 
     &__inner {
         width: 100%;
@@ -634,27 +686,18 @@ body {
     }
 
     &__logo {
-        width: 30%;
+        width: 40%;
         max-width: 350px;
         margin-bottom: 2rem;
     }
 
     &__text {
-        margin: 0;
-        font-size: 3rem;
-        font-weight: 500;
-        color: $red;
-        margin-bottom: 6rem;
+        font-weight: 500 !important;
+        color: $green;
     }
 
     &__btn {
-        width: 100%;
-        max-width: 300px;
-        font-size: 18px;
-        background: $red;
-        color: white;
-        padding: 2rem 3rem;
-        font-family: "Styrene";
+        margin-top: 5rem;
     }
 }
 
@@ -666,34 +709,25 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
+    text-align: center;
 
     &__inner {
         width: 100%;
         max-width: 600px;
     }
 
-    &__logo {
-        width: 30%;
-        max-width: 350px;
-        margin-bottom: 2rem;
+    &__num {
+        font-family: Cakra;
+        letter-spacing: 1rem;
+        font-size: 16rem;
+        font-weight: 900;
+        color: #a80f0f;
+//        margin-bottom: 1rem;
     }
 
-    &__text {
-        margin: 0;
-        font-size: 3rem;
-        font-weight: 500;
-        color: $red;
-        margin-bottom: 6rem;
-    }
-
-    &__btn {
-        width: 100%;
-        max-width: 300px;
-        font-size: 18px;
-        background: $red;
-        color: white;
-        padding: 2rem 3rem;
-    }
+        &__btn {
+            margin-top: 5rem;
+        }
 }
 
 
@@ -709,7 +743,7 @@ body {
         margin: 0 auto;
         padding: 20px 40px;
         border-radius: 10px;
-        background: $red;
+        background: $blue;
         color: white;
         border: none;
         outline: none;
@@ -736,7 +770,7 @@ body {
     img {
         margin-top: 40%;
         margin-bottom: 15px;
-        color: $red;
+        color: $blue;
         width: 100px;
     }
 }
@@ -752,7 +786,7 @@ body {
     color: #121212 !important;
     margin-top: 10px;
     width: 80%;
-    border: 1px solid $red;
+    border: 1px solid $blue;
     padding: 15px 10px;
     margin: 0 auto !important;
     margin-top: 10px !important;
@@ -781,7 +815,7 @@ body {
     &__image {
         text-align: center;
         margin-bottom: 5rem;
-        color: $red;
+        color: $blue;
 
         i {
             font-size: 20rem;
@@ -790,23 +824,23 @@ body {
 
     &__title {
         font-size: 3rem;
-        color: $red;
+        color: $violet;
         margin-bottom: 4rem;
         text-align: center;
 
         span {
-            color: $orange;
+            color: $blue;
         }
     }
 
     &__text {
         font-size: 2rem;
-        color: $red;
+        color: $blue;
         text-align: center;
         font-weight: 500;
 
         span {
-            color: $orange;
+            color: $blue;
         }
     }
 
@@ -816,32 +850,30 @@ body {
 
     &__item {
         padding: 2rem 2rem;
-        border: 1px solid $red;
+        border: 1px solid $blue;
         border-bottom: none;
-        color: #ff714b;
-        font-size: 1.8rem;
+        color: $blue;
         width: 100%;
         box-sizing: border-box;
-        font-weight: 400;
 
         span {
             font-weight: 700;
-            color: $red;
+            color: $violet;
         }
 
         &:nth-child(odd) {
-            background: #fffaf4;
+            background: #f4f6ff;
         }
 
         &:last-child {
-            border-bottom: 1px solid $red;
+            border-bottom: 1px solid $blue;
         }
     }
 
     &__btn {
         width: 100%;
         padding: 3rem 2rem;
-        background: $red;
+        background: $blue;
         color: white;
         border: none;
         outline: none;
@@ -868,18 +900,18 @@ body {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    
+
     span {
         font-size: 1.8rem;
-        color: $red;
-        
+        color: $blue;
+
     }
 
     i {
         color: white;
         font-size: 2.5rem;
         margin: 0;
-        background: $red;
+        background: $blue;
         width: 7rem;
         height: 7rem;
         text-align: center;
@@ -930,11 +962,14 @@ body {
 
         &__menu {
             padding-left: 0;
-            border-top: 1px solid $violet;
-            padding: 2rem 1rem;
+            gap: 1rem;
 
             li {
                 text-align: left;
+                border: 1px solid $violet;
+                border-radius: 20px;
+                padding: 1rem 2rem;
+                opacity: .8;
             }
         }
     }
@@ -979,38 +1014,24 @@ body {
             }
         }
 
-        &__etu {
-            display: none;
-
-        }
-
-        &__etu_mini {
-            display: block;
-            height: 55px !important;
-        }
-
         &__right {
             overflow-x: auto;
 
             &::-webkit-scrollbar {
-                height: 4px;
+                height: 0px;
             }
 
             &::-webkit-scrollbar-track {
-                background: #fbeeff;
+                background: rgba(251, 238, 255, 0.47);
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: rgba(92, 0, 119, 0.6);
+                background-color: rgba(92, 0, 119, 0.5);
                 border: 1px solid #f5eeff;
             }
         }
 
         &__menu {
-//            padding-left: 0;
-            padding-left: 15px !important;
-            border-top: 1px solid $violet;
-            padding: 2rem 1rem;
             font-size: 2rem;
             width: max-content;
             margin: 0;
@@ -1024,62 +1045,76 @@ body {
     .main {
         padding-top: 23rem;
         padding-bottom: 8rem;
-        
+
         &__inner {
             flex-direction: column;
             gap: 3rem;
         }
-        
+
         &__image {
-            width: 90%;
-//            display: none;
+            width: 70%;
+            //            display: none;
+
+            &_desktop {
+                display: none;
+            }
+
+            &_mobile {
+                display: block;
+            }
         }
-        
+
         &__content {
             width: 100%;
             margin-top: -8rem;
             background: rgba(255, 255, 255, 0.92);
             text-align: center;
         }
-        
+
         &__tags {
             margin: 0 auto;
+            //            width: 100%;
             width: max-content;
         }
-        
+
         &__tag {
             padding: 1.5rem 2rem;
         }
-        
+
         &__title {
             font-size: 4.8rem;
-            margin-bottom: 1rem; 
+            margin-bottom: 1rem;
+            line-height: 190%;
+
+            span {
+                font-size: 13rem;
+            }
         }
-        
+
         &__text {
             border: none;
             margin: 0 !important;
+            padding-left: 0;
         }
-        
+
         &__btns {
             flex-direction: column;
             gap: 2rem;
         }
-        
+
         &__btn {
             margin: 0 auto;
             padding: 0;
             width: 90%;
-            margin-top: 3rem;
             padding: 4rem 0;
-            
+
             &_tg {
                 margin-top: 0;
                 padding: 2rem 0;
             }
         }
     }
-    
+
     .reg {
         &__input {
             padding: 20px;

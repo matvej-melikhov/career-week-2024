@@ -1,211 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Промышленная карьерная неделя СОКТ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}Карьерная неделя 2024 в ПРОСТО{% endblock title %}
 
-    <meta property="og:title" content="Промышленная карьерная неделя СОКТ">
-    <meta property="og:site_name" content="Промышленная карьерная неделя СОКТ">
-    <meta property="og:url" content="https://industrial-career-week.ru">
-    <meta property="og:description" content="Для студентов промышленная карьерная неделя — отличный шанс познакомиться с новыми людьми, завести профессиональные связи, получить инсайды и возможность получить стажировку.">
-    <meta property="og:image" content="{{ url_for('index') }}static/img/career.png">
+{% block content %}
+<div class="container">
 
-    <link rel="icon" href="{{ url_for('index') }}static/img/career.png">
-    <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ url_for('index') }}static/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{ url_for('index') }}static/css/main.css">
-    <script src="https://kit.fontawesome.com/0ad5947fc3.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="{{ url_for('index') }}static/js/owl.carousel.min.js"></script>
-</head>
 
-<body>
+    <header class="header">
+        <div class="header__left">
+            <div class="header__logos">
+                <img class="header__logo header__logo_prosto" src="{{ url_for('index') }}static/img/prosto.svg" width="120px" alt="">
+                <img class="header__logo header__logo_sokt" src="{{ url_for('index') }}static/img/sokt.png" alt="">
+                <img class="header__logo header__logo_profcom" src="{{ url_for('index') }}static/img/profcom.png" alt="">
+            </div>
+        </div>
+        <div class="header__right">
+            <ul class="header__menu">
+                <li><a href="#why">Стоит участвовать?</a></li>
+                <li><a href="#companies">Компании</a></li>
+                <li><a href="#registration">Регистрация</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
 
-    {% for flash in get_flashed_messages() %}
-    <div class="flash">{{ flash }}</div>
-    {% endfor %}
 
+    <div class="main">
+        <div class="main__inner">
+            <img class="main__image main__image_desktop" src="{{url_for('index')}}static/img/career-logo.svg" alt="">
+            <img class="main__image main__image_mobile" src="{{url_for('index')}}static/img/career-banner.svg" alt="">
+            <div class="main__content">
+                <div class="main__tags">
+                    <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 15-16 мая</div>
+                    <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> ПРОСТО на Карповке</div>
+                </div>
+                <h1 class="main__title">Карьерная неделя <span>2024</span></h1>
+                <p class="main__text text">Столько <span>возможностей</span> для карьерного роста <span>ПРОСТО</span> нельзя упускать! Шанс <span>познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и <span>стажировку.</span></p>
+                <div class="main__btns">
+                    <a href="#registration" class="main__btn btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
+                    <a href="https://t.me/industrial_career_week" class="main__btn main__btn_tg btn"><i class="fa-brands fa-telegram"></i>ТГ-канал</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="why" id="why">
     <div class="container">
+        <h2 class="why__title title">Почему стоит принять участие?</h2>
+        <div class="why__wrapper">
 
-
-        <header class="header">
-            <div class="header__left">
-                <div class="header__logos">
-                    <img class="header__etu" src="{{ url_for('index') }}static/img/etu.png" alt="">
-                    <img class="header__etu_mini" src="{{ url_for('index') }}static/img/etu-mini.png" alt="">
-                    <img src="{{ url_for('index') }}static/img/sokt.png" alt="">
-                    <img src="{{ url_for('index') }}static/img/profcom.png" alt="">
+            <div class="why__item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div class="why__content">
+                    <h4>Работа</h4>
+                    <p class="text">25+ компаний с открытыми вакансиями для молодых специалистов</p>
                 </div>
             </div>
-            <div class="header__right">
-                <ul class="header__menu">
-                    <li><a href="#why">Почему стоит принять участие?</a></li>
-                    <li><a href="#companies">Какие компании будут?</a></li>
-                    <li><a href="#registration">Регистрация</a></li>
-                </ul>
-            </div>
-        </header>
 
-
-        <div class="main">
-            <div class="main__inner">
-                <img class="main__image" src="{{url_for('index')}}static/img/career.png" alt="">
-                <div class="main__content">
-                    <div class="main__tags">
-                        <div class="main__tag main__tag_first"><i class="fa-solid fa-clock"></i> 19-22 февраля</div>
-                        <div class="main__tag main__tag_second"><i class="fa-solid fa-map"></i> 5 корпус ЛЭТИ</div>
-                    </div>
-                    <h1 class="main__title">Промышленная <span>карьерная неделя</span></h1>
-                    <p class="main__text">Для студентов промышленная карьерная неделя — отличный <span>шанс познакомиться</span> с новыми людьми, завести <span>профессиональные связи,</span> получить инсайды и возможность получить <span>стажировку.</span></p>
-                    <div class="main__btns">
-                        <a href="#registration" class="main__btn"><i class="fa-solid fa-bolt-lightning"></i> Участвовать</a>
-                        <a href="https://t.me/industrial_career_week" class="main__btn main__btn_tg"><i class="fa-brands fa-telegram"></i>ТГ-канал</a>
-                    </div>
+            <div class="why__item">
+                <i class="fa-solid fa-fire"></i>
+                <div class="why__content">
+                    <h4>Интересно</h4>
+                    <p class="text">1 000+ участников, включая HR, экспертов и твоих единомышленников</p>
                 </div>
             </div>
+
+            <div class="why__item">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <div class="why__content">
+                    <h4>Полезно</h4>
+                    <p class="text">Нетворкинг, мастер-классы, кейсы и Q&A со спикерами</p>
+                </div>
+            </div>
+
+            <div class="why__item">
+                <i class="fa-solid fa-coins"></i>
+                <div class="why__content">
+                    <h4>Бесплатно для участников</h4>
+                    <p class="text">Участие, мерч и призы, опыт от профессионалов.</p>
+                </div>
+            </div>
+
         </div>
-
+        <a href="#registration" class="why__btn btn">Я приду!</a>
     </div>
+</div>
 
 
-    <div class="why" id="why">
-        <div class="container">
-            <h2 class="why__title">Почему стоит принять участие?</h2>
-            <div class="why__wrapper">
+<div class="comps" id="companies">
+    <div class="container">
+        <h2 class="comps__title title">Какие компании будут у нас?</h2>
 
-                <div class="why__item">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <div class="why__content">
-                        <h4>Работа</h4>
-                        <p>25+ компаний с открытыми вакансиями для молодых специалистов</p>
-                    </div>
-                </div>
+<!--
+        <div class="slider owl-carousel owl-theme" id="slider">
 
-                <div class="why__item">
-                    <i class="fa-solid fa-fire"></i>
-                    <div class="why__content">
-                        <h4>Интересно</h4>
-                        <p>1 000+ участников, включая HR, экспертов и твоих единомышленников</p>
-                    </div>
-                </div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/1.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/2.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/3.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/4.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/5.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/6.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/7.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/8.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/9.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/10.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/11.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/12.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/13.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/14.jpg')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/15.jpg')"></div>
 
-                <div class="why__item">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                    <div class="why__content">
-                        <h4>Полезно</h4>
-                        <p>Нетворкинг, мастер-классы, кейсы и Q&A со спикерами</p>
-                    </div>
-                </div>
-
-                <div class="why__item">
-                    <i class="fa-solid fa-coins"></i>
-                    <div class="why__content">
-                        <h4>Бесплатно</h4>
-                        <p>Участие, мерч и призы, опыт от профессионалов.</p>
-                    </div>
-                </div>
-
-            </div>
-            <a href="#registration" class="why__btn">Я приду!</a>
         </div>
+-->
+        <h4 style="font-size: 2rem; font-family: Styrene, sans-serif;">Список пока пополняется...</h4>
+
+        <a href="#registration" class="comps__btn btn">Точно приду!</a>
     </div>
+</div>
 
+<div class="reg-links" id="registration">
+    <div class="container">
+        <h2 class="reg-links__title title">Регистрация</h2>
+        
+        <p class="reg-links__text text">Обратите внимание, что после регистрации необходимо также зарегистрироваться на мероприятие на сайте <a target="_blank" class="ref" href="https://www.prostospb.team">коворкинга&nbsp;ПРОСТО</a></p>
 
-    <div class="comps" id="companies">
-        <div class="container">
-            <h2 class="comps__title">Какие компании будут у нас?</h2>
+        <a href="{{ url_for('clients') }}" class="reg-links__block btn">
+            <h3 class="reg-links__minititle">Регистрация для участников</h3>
+            <div class="reg-links__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+        <a href="{{ url_for('companies') }}" class="reg-links__block btn">
+            <h3 class="reg-links__minititle">Регистрация для компаний</h3>
+            <div class="reg-links__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+    </div>
+</div>
 
-            <div class="slider owl-carousel owl-theme" id="slider">
-
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/1.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/2.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/3.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/4.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/5.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/6.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/7.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/8.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/9.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/10.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/11.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/12.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/13.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/14.jpg')"></div>
-                <div class="slide" style="background-image: url('{{ url_for('index') }}static/img/15.jpg')"></div>
-
-            </div>
-
-            <a href="#registration" class="comps__btn">Точно приду!</a>
+<div class="dev">
+    <div class="container">
+        <div class="dev__inner">
+            <h3 class="title dev__title">Разработка сайта — <span>IT отдел СОКТ</span></h3>
+            <p class="dev__text text">Хочешь вступить в наши ряды?</p>
+            <a target="_blank" href="https://vk.com/eltech_career?w=wall-113893523_4141" class="dev__btn btn">Перейти</a>
         </div>
     </div>
-
-
-    <div class="reg" id="registration">
-        <div class="container">
-            <h2 class="reg__title">Регистрация участника</h2>
-            <form action="" method="POST" class="reg__form">
-
-                <input required name="name" type="text" class="reg__input" placeholder="Имя фамилия">
-                <input required name="course" type="text" class="reg__input" placeholder="Курс">
-                <input required name="faculty" type="text" class="reg__input" placeholder="Факультет">
-                <input required name="grade" type="text" class="reg__input" placeholder="Направление подготовки">
-                <input required name="email" type="text" class="reg__input" placeholder="Почтовый ящик">
-
-                <textarea class="reg__input" name="from" id="" rows="5" placeholder="Откуда узнали про промышленную карьерную неделю?"></textarea>
-
-                <div class="reg__check">
-                    <input required type="checkbox">
-                    <p>Нажимая кнопку «Участвовать», Вы даёте согласие на обработку ваших персональных данных</p>
-                </div>
-
-                <button class="reg__btn" type="submit">Участвовать</button>
-
-            </form>
-        </div>
-    </div>
-
-    <div class="dev">
-        <div class="container">
-            <div class="dev__inner">
-                <h3 class="dev__title">Разработка сайта — <span>IT отдел СОКТ</span></h3>
-                <p class="dev__text">Хочешь вступить в наши ряды?</p>
-                <a target="_blank" href="https://vk.com/eltech_career?w=wall-113893523_4141" class="dev__btn">Перейти</a>
-            </div>
-        </div>
-    </div>
+</div>
 
 
 
-    <script>
-        $(document).ready(function() {
-            const slider = $("#slider").owlCarousel({
-                loop: true,
-                nav: false,
-                dots: false,
-                margin: 50,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 4
-                    }
+<script>
+    $(document).ready(function() {
+        const slider = $("#slider").owlCarousel({
+            loop: true,
+            nav: false,
+            dots: false,
+            margin: 50,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
                 }
-            });
+            }
         });
+    });
 
-    </script>
+</script>
 
-
-
-</body>
-
-</html>
+{% endblock content %}

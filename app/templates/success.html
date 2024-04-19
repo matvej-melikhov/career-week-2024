@@ -6,9 +6,10 @@
 
 <div class="success">
     <div class="success__inner">
-        <img src="{{ url_for('index') }}static/img/career.png" alt="" class="success__logo">
-        <h2 class="success__text">{{ name }}, письмо с приглашением выслано Вам на почту! Если не обнаружили письмо, проверьте папку «СПАМ»</h2>
-        <a href="{{ url_for('index') }}" class="success__btn">На главную</a>
+        <img src="{{ url_for('index') }}static/img/career-logo.svg" alt="" class="success__logo">
+        <p class="text success__text">{{ name }}, письмо с приглашением и QR-кодом выслано Вам на почту! Если не обнаружили письмо, проверьте папку «СПАМ»</p>
+        <p class="text">Также не забудьте зарегистрироваться на мероприятие на платформе <a href="https://www.prostospb.team" class="ref">коворкинга ПРОСТО</a></p>
+        <a href="{{ url_for('index') }}" class="btn success__btn">На главную</a>
     </div>
 </div>
 

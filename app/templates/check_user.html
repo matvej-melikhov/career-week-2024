@@ -9,30 +9,30 @@
 <div class="container">
     
     <a href="{{ url_for('scanner') }}" class="to-scanner">
-    <i class="fa-solid fa-arrow-left"></i> <span>Назад к сканеру</span>
+    <i class="fa-solid fa-arrow-left"></i> <span class="text">Назад к сканеру</span>
     </a>
 
     {% if user %}
 
     <div class="user-info">
         <div class="user-info__inner">
-            <h2 class="user-info__title">Пользователь <span>найден</span></h2>
+            <h2 class="user-info__title title">Пользователь <span>найден</span></h2>
             <div class="user-info__content">
-                <div class="user-info__item">Имя: <span>{{ user.name }}</span></div>
-                <div class="user-info__item">Курс: <span>{{ user.course }}</span></div>
-                <div class="user-info__item">Факультет: <span>{{ user.faculty }}</span></div>
-                <div class="user-info__item">Зарегистрирован: <span>{% if user.time %}{{ user.time.strftime('%d.%m, %H:%M:%S') }}{% else %}Неизвестно{% endif %}</span></div>
-                <div class="user-info__item">Email: <span>{{ user.email }}</span></div>
-                <div class="user-info__item">Отмечен: <span>{{ ["Нет", "Да"][user.visited] or "Нет" }}</span></div>
+                <div class="user-info__item text">Имя: <span>{{ user.name }}</span></div>
+                <div class="user-info__item text">Курс: <span>{{ user.course }}</span></div>
+                <div class="user-info__item text">Факультет: <span>{{ user.faculty }}</span></div>
+                <div class="user-info__item text">Зарегистрирован: <span>{% if user.time %}{{ user.time.strftime('%d.%m, %H:%M:%S') }}{% else %}Неизвестно{% endif %}</span></div>
+                <div class="user-info__item text">Email: <span>{{ user.email }}</span></div>
+                <div class="user-info__item text">Отмечен: <span>{{ ["Нет", "Да"][user.visited] or "Нет" }}</span></div>
             </div>
 
             <form action="" method="POST">
                 {% if not user.visited %}
-                <button class="user-info__btn" type="submit">Пришёл</button>
+                <button class="btn user-info__btn" type="submit">Пришёл</button>
                 {% else %}
-                <button disabled class="user-info__btn" type="submit">Пользователь отмечен</button>
+                <button disabled class="btn user-info__btn" type="submit">Пользователь отмечен</button>
                 {% endif %}
-                <p class="user-info__attention">Внимание! Перепроверьте данные пользователя</p>
+                <p class="text user-info__attention">Внимание! Перепроверьте данные пользователя</p>
             </form>
         </div>
     </div>
@@ -42,8 +42,8 @@
     <div class="user-info">
         <div class="user-info__inner">
            <div class="user-info__image"><i class="fa-solid fa-face-sad-cry"></i></div>
-            <h2 class="user-info__title">Пользователь <span>не найден :(</span></h2>
-            <p class="user-info__text">Проверьте, актуальность QR-кода. Возможно, высылался <span>еще один QR-код,</span> тогда нужно использовать его.</p>
+            <h2 class="title user-info__title">Пользователь <span>не найден :(</span></h2>
+            <p class="text user-info__text">Проверьте, актуальность QR-кода. Возможно, высылался <span>еще один QR-код,</span> тогда нужно использовать его.</p>
         </div>
     </div>
 
